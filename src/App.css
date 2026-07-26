@@ -133,14 +133,14 @@ a:hover,
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #06101f;
+  background: linear-gradient(135deg, #9dff52, #72c200);
+  color: #061101;
 }
 
 .button-secondary {
   color: var(--link);
   border: 1px solid var(--link);
-  background: rgba(46, 10, 53, 0.45);
+  background: rgba(157, 255, 82, 0.15);
 }
 
 .mock-screen {

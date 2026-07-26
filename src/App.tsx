@@ -59,12 +59,6 @@ const features = [
 
 const teamMembers = [
   {
-    name: 'Adam Pastorok',
-    role: 'Product Owner',
-    details: 'Product direction, scope definition, and project coordination.',
-    contact: 'Apastorok@gmail.com',
-  },
-  {
     name: 'Tanner Gleason',
     role: 'Scrum Master',
     details:
@@ -90,9 +84,10 @@ const teamMembers = [
   },
   {
     name: 'Manas Patel',
-    role: 'Developer',
+    role: 'Developer & Website Creator',
     details:
-      'Enemy class, movement phase, player controller, movement UI, currency system, battle stats, and debugging.',
+      'Enemy class, movement phase, player controller, movement UI, currency system, battle stats, debugging, and website design.',
+    contact: 'mpate160@charlotte.edu',
   },
 ];
 
@@ -236,7 +231,11 @@ function App() {
                 <h3>{member.name}</h3>
                 <p className="team-role">{member.role}</p>
                 <p>{member.details}</p>
-                {member.contact ? <p>Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a></p> : null}
+                {member.contact ? (
+                  <p>
+                    Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a>
+                  </p>
+                ) : null}
               </article>
             ))}
           </div>
@@ -249,7 +248,7 @@ function App() {
           </div>
           <div className="repo-card">
             <p>The repository contains the Godot project files, build instructions, and the current project documentation.</p>
-            <a className="button button-primary" href="https://github.com/manasp17/gridfall-website" target="_blank" rel="noreferrer">
+            <a className="button button-primary" href="https://github.com/Lag-Wizards/Gridfall" target="_blank" rel="noreferrer">
               Open GRIDFALL Repo
             </a>
           </div>
@@ -276,7 +275,7 @@ function App() {
       <footer className="site-footer" id="connect">
         <p>GRIDFALL landing page • built by Manas Patel</p>
         <p>
-          <a href="https://github.com/manasp17/gridfall-website" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Lag-Wizards/Gridfall" target="_blank" rel="noreferrer">
             Source on GitHub
           </a>
         </p>
