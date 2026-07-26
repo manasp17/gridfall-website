@@ -3,31 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GRIDFALL — JRPG Adventure</title>
+    <title>GRIDFALL — JRPG Capstone</title>
     <meta
       name="description"
-      content="GRIDFALL is a JRPG capstone adventure with tactical combat, character stories, and a rich pixel-fantasy world."
+      content="GRIDFALL is a team capstone JRPG built in Godot with tactical phases, character growth, and save persistence."
     />
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <div class="brand">GRIDFALL</div>
-        <button id="themeToggle" class="theme-toggle">Dark Mode</button>
-      </header>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
 
       <main>
         <section class="hero split-hero">
           <div class="hero-copy">
-            <p class="eyebrow">JRPG Demo Campaign</p>
-            <h1>Gridfall awaits.</h1>
+            <p class="eyebrow">JRPG Capstone Experience</p>
+            <h1>GRIDFALL: a tactical story adventure</h1>
             <p class="hero-text">
-              A tactical role-playing adventure built by our capstone team. Explore a world of ancient ruins, party-based combat, and a story about a kingdom on the edge of collapse.
+              A Godot-powered JRPG built by a focused capstone team. Learn how to download, run, and play the current demo, and explore our gameplay systems, team roles, and future executable release.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#play">Play Demo</a>
-              <a class="button button-secondary" href="#details">Game Info</a>
+              <a class="button button-primary" href="#download">Download Guide</a>
+              <a class="button button-secondary" href="#repo">View Repo</a>
             </div>
           </div>
           <div class="hero-art">
@@ -37,105 +35,162 @@
               </div>
               <div class="mock-screen__content">
                 <div class="stat-panel">
-                  <h2>Battle Preview</h2>
-                  <p>Party synergy, turn order, and special grid attacks.</p>
+                  <h2>Playable phase demo</h2>
+                  <p>Movement phase, battle phase, leveling, saves, and enemy tactics.</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="details" class="section intro-section">
+        <section id="about" class="section about-section">
           <div class="section-header">
-            <h2>What makes GRIDFALL unique</h2>
-            <p>Showcase your capstone game with a polished landing page built entirely from scratch.</p>
+            <h2>About GRIDFALL</h2>
+            <p>GRIDFALL is a single-level tactical JRPG experience built for a capstone project, combining movement strategy, automated battle phases, and persistent progression.</p>
+          </div>
+          <div class="two-column">
+            <div class="text-block">
+              <h3>A story-first JRPG feel</h3>
+              <p>This project focuses on classic JRPG systems: movement points, grid-based engagement, auto-resolved combat, and character leveling. Players advance through phases and save progress while exploring the first level.</p>
+            </div>
+            <div class="text-block">
+              <h3>Built as a team</h3>
+              <p>It is a team-built Godot project using C# classes, authored by a student capstone group. This landing page is a personal website built to showcase the game, the build process, and the development roles.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="download" class="section download-section">
+          <div class="section-header">
+            <h2>How to download and run GRIDFALL</h2>
+            <p>Follow these steps to set up Godot, import the project, and start playing your first demo level.</p>
+          </div>
+          <div class="download-grid">
+            <article class="download-card">
+              <h3>1. Install Godot</h3>
+              <p>Download the latest Godot Mono build from <a href="https://godotengine.org" target="_blank" rel="noreferrer">godotengine.org</a>. Use the .NET-compatible version for this project.</p>
+            </article>
+            <article class="download-card">
+              <h3>2. Install .NET SDK</h3>
+              <p>Download the .NET SDK from <a href="https://dotnet.microsoft.com/en-us/download" target="_blank" rel="noreferrer">dotnet.microsoft.com</a>. The project uses C# scripts, so this step is required.</p>
+            </article>
+            <article class="download-card">
+              <h3>3. Import the project</h3>
+              <p>Open Godot, select <strong>Import</strong>, choose <code>project.godot</code>, and import the repository folder. Accept any version mismatch prompt if needed.</p>
+            </article>
+            <article class="download-card">
+              <h3>4. Configure globals</h3>
+              <p>Open <strong>Project &gt; Project Settings &gt; Globals</strong>. Set the autoload script to <code>res://src/Services/GameManager.cs</code> and enable the global variable.</p>
+            </article>
+          </div>
+          <div class="download-notice">
+            <p><strong>Placeholder:</strong> executable download coming soon. Once the build is ready, this section will link directly to the game executable.</p>
+          </div>
+        </section>
+
+        <section id="features" class="section feature-section">
+          <div class="section-header">
+            <h2>Gameplay systems</h2>
+            <p>GRIDFALL currently includes movement, combat phases, leveling, enemy AI, and save persistence.</p>
           </div>
           <div class="feature-grid">
             <article class="feature-card">
-              <h3>Turn-based tactics</h3>
-              <p>Experience strategic combat with formation bonuses, terrain advantages, and combo moves.</p>
+              <h3>Movement phase</h3>
+              <p>Use movement points to navigate tiles. Press <strong>Next phase</strong> or deplete points to progress to combat.</p>
             </article>
             <article class="feature-card">
-              <h3>Character-driven party</h3>
-              <p>Meet your team with unique abilities, strengths, and story motivations.</p>
+              <h3>Battle phases</h3>
+              <p>Automatic combat resolves outcomes based on unit stats. Both player and enemy battle phases play out in sequence.</p>
             </article>
             <article class="feature-card">
-              <h3>Quest-driven story</h3>
-              <p>Explore a fantasy realm where each decision affects your path and reveals hidden lore.</p>
+              <h3>Progression & saving</h3>
+              <p>Gain experience, level up, and preserve stats across sessions with save/load integration from the pause menu.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Enemy AI</h3>
+              <p>Enemies move and make decisions based on proximity and available actions, creating emergent tactical moments.</p>
             </article>
           </div>
         </section>
 
-        <section class="section gallery-section">
+        <section class="section preview-section">
           <div class="section-header">
-            <h2>Gallery</h2>
-            <p>Preview the game’s art direction, UI, and battle presentation.</p>
+            <h2>Placeholder visuals</h2>
+            <p>Future screenshots and UI images will showcase inventory, menu systems, battle screens, and level design.</p>
           </div>
           <div class="gallery-grid">
-            <div class="gallery-card">World Map</div>
-            <div class="gallery-card">Battle Demo</div>
-            <div class="gallery-card">Character Art</div>
+            <div class="gallery-card">Main Menu UI</div>
+            <div class="gallery-card">Inventory Screen</div>
+            <div class="gallery-card">Battle UI</div>
+            <div class="gallery-card">Save / Pause Menu</div>
           </div>
         </section>
 
-        <section class="section cards-section">
+        <section id="team" class="section team-section">
           <div class="section-header">
-            <h2>Meet the party</h2>
-            <p>Characters you control during the Gridfall adventure.</p>
+            <h2>Meet the team</h2>
+            <p>Which team members owned each part of the project and what they delivered.</p>
           </div>
-          <div class="card-grid">
-            <article class="bio-card">
-              <h3>Seren</h3>
-              <p>A fallen knight with a sharp blade and a sharper sense of justice.</p>
+          <div class="team-grid">
+            <article class="team-card">
+              <h3>Adam Pastorok</h3>
+              <p>Product Owner</p>
+              <p>Email: <a href="mailto:Apastorok@gmail.com">Apastorok@gmail.com</a></p>
             </article>
-            <article class="bio-card">
-              <h3>Kai</h3>
-              <p>A tech mage who manipulates grid energy and supports the party’s strengths.</p>
+            <article class="team-card">
+              <h3>Tanner Gleason</h3>
+              <p>Scrum Master</p>
+              <p>Weapon Class, Level Implementation, Enemy Attributes, Game Over state, Branch/feature merging, Code review, testing, project management.</p>
             </article>
-            <article class="bio-card">
-              <h3>Mina</h3>
-              <p>A wandering healer who ties the group together with support magic and lore.</p>
+            <article class="team-card">
+              <h3>Ahmad Idris</h3>
+              <p>Developer</p>
+              <p>Main Menu, Pause Menu, GameManager, save/load integration, persistence, testing, code reviews.</p>
+            </article>
+            <article class="team-card">
+              <h3>Fong Vang</h3>
+              <p>Developer</p>
+              <p>Character attributes, battle system, leveling UI, player battle UI, exp UI, reviews and testing.</p>
+            </article>
+            <article class="team-card">
+              <h3>Jeffrey Cohn</h3>
+              <p>Developer</p>
+              <p>Enemy AI, CharacterBase, EnemyDisplay, enemy decision logic, stat management, damage/healing, reviews and testing.</p>
+            </article>
+            <article class="team-card">
+              <h3>Manas Patel</h3>
+              <p>Developer</p>
+              <p>Enemy class, player controller, movement phase, movement UI, currency system, enemy stats, debugging, testing.</p>
             </article>
           </div>
         </section>
 
-        <section class="section dev-section">
+        <section id="repo" class="section repo-section">
           <div class="section-header">
-            <h2>Built as a capstone</h2>
-            <p>This site is a self-coded showcase for the GRIDFALL project and the technical design behind it.</p>
+            <h2>Project repository</h2>
+            <p>Visit the main GRIDFALL GitHub repository for the full README, build instructions, and source code.</p>
           </div>
-          <div class="tech-grid">
-            <div class="tech-card">
-              <h3>HTML + CSS + JS</h3>
-              <p>Lightweight static site with responsive layout and custom interactions.</p>
-            </div>
-            <div class="tech-card">
-              <h3>Game design</h3>
-              <p>Focus on party combat, world exploration, and JRPG storytelling.</p>
-            </div>
-            <div class="tech-card">
-              <h3>Team credits</h3>
-3
-              <p>Designed to present a team-built game while highlighting your web craftsmanship.</p>
-            </div>
+          <div class="repo-card">
+            <p>Full game source, Godot project files, build instructions, and current development notes are available in the main repository.</p>
+            <a class="button button-primary" href="https://github.com/manasp17/gridfall-website" target="_blank" rel="noreferrer">Open GRIDFALL Repo</a>
           </div>
         </section>
 
-        <section id="play" class="section cta-section">
+        <section class="section cta-section">
           <div class="cta-panel">
-            <h2>Ready to play?</h2>
-            <p>Push this repository to GitHub Pages and share the live experience with teammates, recruiters, and players.</p>
+            <h2>Launch the capstone</h2>
+            <p>This landing page is a polished presentation layer for GRIDFALL. It is designed to highlight gameplay, setup instructions, team ownership, and the future executable download.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="https://github.com/manasp17/gridfall-website">View Source</a>
-              <a class="button button-secondary" href="#connect">Contact</a>
+              <a class="button button-primary" href="#download">Download Guide</a>
+              <a class="button button-secondary" href="#team">Meet the Team</a>
             </div>
           </div>
         </section>
       </main>
 
       <footer class="site-footer" id="connect">
-        <p>GRIDFALL landing page prototype • built by Manas</p>
-        <p><a href="https://github.com/manasp17/gridfall-website">GitHub repo</a></p>
+        <p>GRIDFALL landing page • built by Manas Patel</p>
+        <p><a href="https://github.com/manasp17/gridfall-website">Source on GitHub</a></p>
       </footer>
     </div>
     <script src="script.js"></script>

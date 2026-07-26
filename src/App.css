@@ -7,6 +7,8 @@
   --text-muted: #d7c0ff;
   --accent: #c889ff;
   --accent-strong: #9e64ff;
+  --link: #9dff52;
+  --link-hover: #d0ff86;
   --border: rgba(200, 150, 255, 0.18);
   --shadow: 0 28px 90px rgba(55, 15, 90, 0.35);
 }
@@ -27,10 +29,20 @@ body {
   min-height: 100vh;
 }
 
-button,
-a.button,
-a {
-  font: inherit;
+a,
+.nav-links a,
+.download-card a,
+.repo-card a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+a:hover,
+.nav-links a:hover,
+.download-card a:hover,
+.repo-card a:hover {
+  color: var(--link-hover);
 }
 
 .page-shell {
@@ -58,16 +70,6 @@ a {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 160ms ease;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
 }
 
 .theme-toggle {
@@ -136,9 +138,9 @@ a {
 }
 
 .button-secondary {
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.03);
+  color: var(--link);
+  border: 1px solid var(--link);
+  background: rgba(46, 10, 53, 0.45);
 }
 
 .mock-screen {
@@ -204,7 +206,7 @@ a {
 }
 
 .about-section .two-column,
-.download-grid,
+download-grid,
 .feature-grid,
 .gallery-grid,
 .team-grid {
@@ -238,8 +240,7 @@ a {
 
 .download-card a,
 .repo-card a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--link);
 }
 
 .download-notice {
@@ -280,6 +281,11 @@ a {
   padding: 40px;
 }
 
+.cta-panel {
+  display: grid;
+  gap: 20px;
+}
+
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: 48px;
@@ -292,8 +298,7 @@ a {
 }
 
 .site-footer a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--link);
 }
 
 @media (max-width: 1024px) {
@@ -337,18 +342,21 @@ body.light {
   --text-muted: #6e5490;
   --accent: #9d6aff;
   --accent-strong: #7c40ff;
+  --link: #2d7f00;
+  --link-hover: #52b92a;
   --border: rgba(122, 82, 172, 0.12);
   background: radial-gradient(circle at top, #f6e8ff 0%, #faf4ff 50%, #f1e1ff 100%);
 }
 
 body.light .theme-toggle {
-  border-color: rgba(15, 23, 42, 0.14);
+  border-color: rgba(122, 82, 172, 0.14);
   color: var(--text);
 }
 
 body.light .button-secondary {
+  color: var(--link);
+  border-color: var(--link);
   background: rgba(156, 107, 228, 0.12);
-  border-color: rgba(128, 83, 227, 0.16);
 }
 
 body.light .mock-screen {
